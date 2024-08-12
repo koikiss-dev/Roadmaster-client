@@ -52,7 +52,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $url = "http://localhost:3000";
+        $url = "https://road-master-server.vercel.app";
         // getters
         $GetBranches = Http::get("$url/sucursales");
         $GetSales = Http::get("$url/ventas");
