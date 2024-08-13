@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('subtitle', 'Welcome')
+@section('subtitle', 'Dashboard')
 
 @section('content_body')
     <section class="mt-3">
