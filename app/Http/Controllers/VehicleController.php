@@ -38,22 +38,24 @@ class VehicleController extends Controller
 
         $dataTable = [];
 
-        $btnEdit = '<button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
-                <i class="fa fa-lg fa-fw fa-pen"></i>
-            </button>';
 
-        $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
-                  <i class="fa fa-lg fa-fw fa-trash"></i>
-              </button>';
-
-        $btnDetails = '<button class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details">
-                   <i class="fa fa-lg fa-fw fa-eye"></i>
-               </button>';
 
         for ($i = 0; $i < count($VehicleDataToJson); $i++) {
             $row = [];
             foreach ($heads as $key => $value) {
                 if (!array_key_exists($key, $VehicleDataToJson[$i]) && array_key_exists("Acciones", $heads)) {
+                    $btnEdit = '<button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
+                            <i class="fa fa-lg fa-fw fa-pen"></i>
+                        </button>';
+
+                    $btnDelete = '<button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
+                              <i class="fa fa-lg fa-fw fa-trash"></i>
+                        </button>';
+
+                    $btnDetails = '<button type="button" class="btn btn-xs btn-default text-teal mx-1 shadow" id="showInfo" data-toggle="modal" data-id="' . $VehicleDataToJson[$i]['COD_VEHICULO'] . '" data-target="#modalMin">
+                <i class="fa fa-lg fa-fw fa-eye"></i>
+            </button>';
+
                     $row[] = '<nobr>' . $btnEdit . $btnDelete . $btnDetails . '</nobr>';
                 } else {
                     $row[] = $VehicleDataToJson[$i][$key];
