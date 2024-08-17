@@ -3,6 +3,9 @@
 @section('subtitle', 'Dashboard')
 
 @section('content_body')
+    <header class="">
+        <h1>DashBoard</h1>
+    </header>
     <section class="mt-3">
         <div class="row">
 
