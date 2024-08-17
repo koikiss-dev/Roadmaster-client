@@ -320,6 +320,16 @@ return [
             'icon' => 'fas fa-fw fa-car',
         ],
         [
+            'text' => 'Marcas',
+            'url' => 'marcas',
+            'icon' => 'fas fa-fw fa-tag',
+        ],
+        [
+            'text' => 'Modelos',
+            'url' => 'modelos',
+            'icon' => 'fas fa-fw fa-fire',
+        ],
+        [
             'text' => 'Ventas',
             'url' => 'ventas',
             'icon' => 'fas fa-fw fa-receipt',
