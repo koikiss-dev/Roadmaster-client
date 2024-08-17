@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-
+@section('plugins.Datatables', true)
 @section('title')
     {{ config('adminlte.title') }}
     @hasSection('subtitle')
