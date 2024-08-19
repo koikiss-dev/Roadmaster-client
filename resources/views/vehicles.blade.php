@@ -219,9 +219,7 @@
     {{-- este es el modal para editar un registro, cambiar solo title y los campos a mostrar --}}
     <x-adminlte-modal onclick="" id="edit" size="lg" title="Modifica un vehiculo">
         <form id="updateForm">
-
             <div class="row">
-
                 <x-adminlte-input name="PI_COD_VEHICULO" label="Id del Vehículo" value=""
                     placeholder="Ingresa el id del vehículo" id="cod" readonly="readonly"
                     fgroup-class="col-md-6" />
@@ -316,7 +314,7 @@
                 icon="fas fa-lg fa-save" />
         </form>
 
-        <span id="idField"></span>
+
     </x-adminlte-modal>
 
 
@@ -331,9 +329,15 @@
         typeTraccion = ["DELANTERA", "TRASERA", "AWD", "4WD"]
 
 
+
+        $(document).on("click", "#editInfo", async function() {
+            const id = $(this).data("id");
+            $('#cod').val(id);
+        });
         //update vehicle data
         document.getElementById("updateForm").addEventListener("submit", function(event) {
             event.preventDefault();
+
 
             const data = {
                 PI_COD_VEHICULO: document.getElementById("cod").value,
@@ -378,6 +382,7 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log("Success:", data);
+                    //console.log(document.querySelector("[name='PV_NOM_VEHICULO']").value);
                     location.reload();
                 })
                 .catch((error) => {
