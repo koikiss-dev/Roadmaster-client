@@ -56,7 +56,7 @@ class EmployeesController extends Controller
                 <i class="fa fa-lg fa-fw fa-eye"></i>
             </button>';
 
-                    $row[] = '<nobr>' . $btnEdit . $btnDelete . $btnDetails . '</nobr>';
+                    $row[] = '<nobr>' . $btnDetails . '</nobr>';
                 } else {
                     $row[] = $EmployeesDataToJson[$i][$key];
                 }

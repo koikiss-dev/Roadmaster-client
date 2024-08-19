@@ -5,7 +5,6 @@
 @section('content_body')
     <header class="d-flex justify-content-between align-items-center">
         <h1>Empleados</h1>
-        <x-adminlte-button label="Agregar un empleado" theme="primary" data-toggle="modal" data-target="#insert" />
     </header>
     <section>
         <x-adminlte-datatable striped id="table" :heads="$info['headsTable']" :config="$info['config']" with-buttons>
@@ -65,10 +64,10 @@
             <label for="direccion">Dirección</label>
             <p id="direccion"></p>
         </div>
-       
+
     </x-adminlte-modal>
 
-    <x-adminlte-modal onclick="" id="insert" size="lg" title="Insertar un nuevo Empleado">
+    {{-- <x-adminlte-modal onclick="" id="insert" size="lg" title="Insertar un nuevo Empleado">
         <form id="insertForm">
             <div class="row">
 
@@ -76,17 +75,17 @@
                     <x-adminlte-options :options="['GERENTE', 'DEPENDIENTE']" placeholder="Rol de la Persona" />
                 </x-adminlte-select>
 
-               
-                <x-adminlte-input name="DNI_PERSONA" label="DNI de la persona"
-                    placeholder="Ingresa el DNI de la Persona" fgroup-class="col-md-6" />
 
-
-                <x-adminlte-input name="NOMBRE_COMPLETO" label="Nombre de la Persona" placeholder="Ingresa el nombre de la persona"
+                <x-adminlte-input name="DNI_PERSONA" label="DNI de la persona" placeholder="Ingresa el DNI de la Persona"
                     fgroup-class="col-md-6" />
 
+
+                <x-adminlte-input name="NOMBRE_COMPLETO" label="Nombre de la Persona"
+                    placeholder="Ingresa el nombre de la persona" fgroup-class="col-md-6" />
+
                 <x-adminlte-input name="FEC_NACIMIENTO" type="datetime-local" label="Fecha de Nacimiento"
-                placeholder="Ingresa la fecha de lanzamiento" fgroup-class="col-md-6" />
-                
+                    placeholder="Ingresa la fecha de lanzamiento" fgroup-class="col-md-6" />
+
                 <x-adminlte-select name="VAL_ESTADO_CIVIL" fgroup-class="col-md-6" label="Estado Civil de La Persona">
                     <x-adminlte-options :options="['SOLTERO', 'CASADO', 'VIUDO', 'DIVORCIADO']" placeholder="Estado Civil de La Persona" />
                 </x-adminlte-select>
@@ -95,54 +94,45 @@
                     <x-adminlte-options :options="['H', 'M']" placeholder="Sexo de la Persona" />
                 </x-adminlte-select>
 
-                <x-adminlte-input name="FEC_INGRESO" type="datetime-local" label="Fecha de Ingreso"
-                placeholder="Ingresa la fecha de su Ingreso" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="FEC_ACTUALIZACION" type="datetime-local" label="Ingrese la fecha de Actualización"
-                placeholder="Ingresa la fecha de Actualización" fgroup-class="col-md-6" />
+                <x-adminlte-input name="COD_TELEFONO" label="Numero de Telefono" placeholder="Ingresa el Numero De Telefono"
+                    fgroup-class="col-md-6" />
 
 
-                
-                <x-adminlte-input name="COD_TELEFONO" label="Numero de Telefono"
-                    placeholder="Ingresa el Numero De Telefono" fgroup-class="col-md-6" />
-
-
-                <x-adminlte-input name="COD_EMAIL" label="Email de la persona"
-                placeholder="Ingresa El Email de la Persona" fgroup-class="col-md-6" />
+                <x-adminlte-input name="COD_EMAIL" label="Email de la persona" placeholder="Ingresa El Email de la Persona"
+                    fgroup-class="col-md-6" />
 
                 <x-adminlte-input name="COD_DIRECCION" label="DIRECCION de la persona"
-                placeholder="Ingresa La Direccion de la Persona" fgroup-class="col-md-6" />
-                
+                    placeholder="Ingresa La Direccion de la Persona" fgroup-class="col-md-6" />
+
 
             </div>
-            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success"
-                icon="fas fa-lg fa-save" />
+            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save" />
         </form>
-    </x-adminlte-modal>
+    </x-adminlte-modal> --}}
 
-    <x-adminlte-modal onclick="" id="edit" size="lg" title="Modifica un Empleado">
+    {{-- <x-adminlte-modal onclick="" id="edit" size="lg" title="Modifica un Empleado">
         <form id="updateForm">
 
             <x-adminlte-input name="COD_EMPLEADO" label="Id del Empleado" value=""
-                    placeholder="Ingresa el id del empleado" id="cod" readonly="readonly"
-                    fgroup-class="col-md-6" />
+                placeholder="Ingresa el id del empleado" id="cod" readonly="readonly" fgroup-class="col-md-6" />
 
             <div class="row">
                 <x-adminlte-select name="VAL_ROL" fgroup-class="col-md-6" label="Rol de la Persona">
                     <x-adminlte-options :options="['GERENTE', 'DEPENDIENTE']" placeholder="Rol de la Persona" />
                 </x-adminlte-select>
 
-               
-                <x-adminlte-input name="DNI_PERSONA" label="DNI de la persona"
-                    placeholder="Ingresa el DNI de la Persona" fgroup-class="col-md-6" />
 
-
-                <x-adminlte-input name="NOMBRE_COMPLETO" label="Nombre de la Persona" placeholder="Ingresa el nombre de la persona"
+                <x-adminlte-input name="PV_DNI" label="DNI de la persona" placeholder="Ingresa el DNI de la Persona"
                     fgroup-class="col-md-6" />
 
+
+                <x-adminlte-input name="NOMBRE_COMPLETO" label="Nombre de la Persona"
+                    placeholder="Ingresa el nombre de la persona" fgroup-class="col-md-6" />
+
                 <x-adminlte-input name="FEC_NACIMIENTO" type="datetime-local" label="Fecha de Nacimiento"
-                placeholder="Ingresa la fecha de lanzamiento" fgroup-class="col-md-6" />
-                
+                    placeholder="Ingresa la fecha de lanzamiento" fgroup-class="col-md-6" />
+
                 <x-adminlte-select name="VAL_ESTADO_CIVIL" fgroup-class="col-md-6" label="Estado Civil de La Persona">
                     <x-adminlte-options :options="['SOLTERO', 'CASADO', 'VIUDO', 'DIVORCIADO']" placeholder="Estado Civil de La Persona" />
                 </x-adminlte-select>
@@ -151,31 +141,23 @@
                     <x-adminlte-options :options="['H', 'M']" placeholder="Sexo de la Persona" />
                 </x-adminlte-select>
 
-                <x-adminlte-input name="FEC_INGRESO" type="datetime-local" label="Fecha de Ingreso"
-                placeholder="Ingresa la fecha de su Ingreso" fgroup-class="col-md-6" />
-
-                <x-adminlte-input name="FEC_ACTUALIZACION" type="datetime-local" label="Ingrese la fecha de Actualización"
-                placeholder="Ingresa la fecha de Actualización" fgroup-class="col-md-6" />
-
-
-                
                 <x-adminlte-input name="COD_TELEFONO" label="Numero de Telefono"
                     placeholder="Ingresa el Numero De Telefono" fgroup-class="col-md-6" />
 
 
                 <x-adminlte-input name="COD_EMAIL" label="Email de la persona"
-                placeholder="Ingresa El Email de la Persona" fgroup-class="col-md-6" />
+                    placeholder="Ingresa El Email de la Persona" fgroup-class="col-md-6" />
 
                 <x-adminlte-input name="COD_DIRECCION" label="DIRECCION de la persona"
-                placeholder="Ingresa La Direccion de la Persona" fgroup-class="col-md-6" />
-                
+                    placeholder="Ingresa La Direccion de la Persona" fgroup-class="col-md-6" />
+
             </div>
             <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success"
                 icon="fas fa-lg fa-save" />
         </form>
 
         <span id="idField"></span>
-    </x-adminlte-modal>
+    </x-adminlte-modal> --}}
 @stop
 
 @section('js')
@@ -183,78 +165,76 @@
         typeRol = ["GERENTE", "DEPENDIENTE"];
         typeCivil = ['SOLTERO', 'CASADO', 'VIUDO', 'DIVORCIADO'];
         typeSex = ['H', 'M'];
-        
-        document.getElementById("updateForm").addEventListener("submit", function(event) {
-            event.preventDefault();
 
-            const data = {
+        /*     document.getElementById("updateForm").addEventListener("submit", function(event) {
+                event.preventDefault();
 
-                VAL_ROL: typeRol[parseInt(document.querySelector("[name='VAL_ROL']").value)],
-                DNI_PERSONA: document.querySelector("[name='DNI_PERSONA']").value,
-                NOMBRE_COMPLETO: document.querySelector("[name='NOMBRE_COMPLETO']").value,
-                FEC_NACIMIENTO: document.querySelector("[name='FEC_NACIMIENTO']").value,
-                VAL_ESTADO_CIVIL: typeCivil[parseInt(document.querySelector("[name='VAL_ESTADO_CIVIL']").value)],
-                SEX_PERSONA: typeSex[parseInt(document.querySelector("[name='SEX_PERSONA']").value)],
-                FEC_INGRESO: document.querySelector("[name='FEC_INGRESO']").value,
-                FEC_ACTUALIZACION: document.querySelector("[name='FEC_ACTUALIZACION']").value,
-                COD_TELEFONO: document.querySelector("[name='COD_TELEFONO']").value,
-                COD_EMAIL: document.querySelector("[name='COD_EMAIL']").value,
-                COD_DIRECCION: document.querySelector("[name='COD_DIRECCION']").value,
-            };
+                const data = {
 
-            fetch(`https://road-master-server.vercel.app/empleados/`, {
-                    method: "PATCH",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Success:", data);
-                    location.reload();
-                })
-                .catch((error) => {
-                    console.error("Error:", error);
-                });
-        });
+                    VAL_ROL: typeRol[parseInt(document.querySelector("[name='VAL_ROL']").value)],
+                    DNI_PERSONA: document.querySelector("[name='DNI_PERSONA']").value,
+                    NOMBRE_COMPLETO: document.querySelector("[name='NOMBRE_COMPLETO']").value,
+                    FEC_NACIMIENTO: document.querySelector("[name='FEC_NACIMIENTO']").value,
+                    VAL_ESTADO_CIVIL: typeCivil[parseInt(document.querySelector("[name='VAL_ESTADO_CIVIL']")
+                        .value)],
+                    SEX_PERSONA: typeSex[parseInt(document.querySelector("[name='SEX_PERSONA']").value)],
+                    COD_TELEFONO: document.querySelector("[name='COD_TELEFONO']").value,
+                    COD_EMAIL: document.querySelector("[name='COD_EMAIL']").value,
+                    COD_DIRECCION: document.querySelector("[name='COD_DIRECCION']").value,
+                };
 
-
-        document.getElementById("insertForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const data = {
-                VAL_ROL: typeRol[parseInt(document.querySelector("[name='VAL_ROL']").value)],
-                DNI_PERSONA: document.querySelector("[name='DNI_PERSONA']").value,
-                NOMBRE_COMPLETO: document.querySelector("[name='NOMBRE_COMPLETO']").value,
-                FEC_NACIMIENTO: document.querySelector("[name='FEC_NACIMIENTO']").value,
-                VAL_ESTADO_CIVIL: typeCivil[parseInt(document.querySelector("[name='VAL_ESTADO_CIVIL']").value)],
-                SEX_PERSONA: typeSex[parseInt(document.querySelector("[name='SEX_PERSONA']").value)],
-                FEC_INGRESO: document.querySelector("[name='FEC_INGRESO']").value,
-                FEC_ACTUALIZACION: document.querySelector("[name='FEC_ACTUALIZACION']").value,
-                COD_TELEFONO: document.querySelector("[name='COD_TELEFONO']").value,
-                COD_EMAIL: document.querySelector("[name='COD_EMAIL']").value,
-                COD_DIRECCION: document.querySelector("[name='COD_DIRECCION']").value,
-                
-            };
+                fetch(`https://road-master-server.vercel.app/empleados/`, {
+                        method: "PATCH",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Success:", data);
+                        location.reload();
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                    });
+            });
 
 
-            fetch(`https://road-master-server.vercel.app/empleados/`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Success:", data);
-                    location.reload();
-                })
-                .catch((error) => {
-                    console.error("Error:", error);
-                });
-        });
+            document.getElementById("insertForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const data = {
+                    VAL_ROL: typeRol[parseInt(document.querySelector("[name='VAL_ROL']").value)],
+                    DNI_PERSONA: document.querySelector("[name='DNI_PERSONA']").value,
+                    NOMBRE_COMPLETO: document.querySelector("[name='NOMBRE_COMPLETO']").value,
+                    FEC_NACIMIENTO: document.querySelector("[name='FEC_NACIMIENTO']").value,
+                    VAL_ESTADO_CIVIL: typeCivil[parseInt(document.querySelector("[name='VAL_ESTADO_CIVIL']")
+                        .value)],
+                    SEX_PERSONA: typeSex[parseInt(document.querySelector("[name='SEX_PERSONA']").value)],
+                    COD_TELEFONO: document.querySelector("[name='COD_TELEFONO']").value,
+                    COD_EMAIL: document.querySelector("[name='COD_EMAIL']").value,
+                    COD_DIRECCION: document.querySelector("[name='COD_DIRECCION']").value,
+
+                };
+
+
+                fetch(`https://road-master-server.vercel.app/empleados/`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Success:", data);
+                        location.reload();
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                    });
+            }); */
 
         $(document).on("click", "#showInfo", async function() {
             const id = $(this).data("id");
@@ -262,13 +242,14 @@
 
             try {
                 const response = await fetch(
-                    `https://road-master-server.vercel.app/empleados?id=${id}`
+                    `https://road-master-server.vercel.app/empleado?id=${id}`
                 );
                 const data = await response.json();
                 await dataEmployee.push(data[0]);
             } catch (error) {
                 console.log(error);
             }
+            console.log(dataEmployee)
 
             $("#view #rolEmpleado").text(dataEmployee[0].VAL_ROL);
             $("#view #dniPersona").text(dataEmployee[0].DNI_PERSONA);
@@ -279,19 +260,19 @@
             $("#view #fecIngreso").text(dataEmployee[0].FEC_INGRESO.split('T')[0] + " " + dataEmployee[
                     0]
                 .FEC_INGRESO.split('T')[1].split('.')[0]);
-                $("#view #fecActualizacion").text(dataEmployee[0].FEC_ACTUALIZACION.split('T')[0]);
-            $("#view #numTelefono").text(dataEmployee[0].COD_TELEFONO);
-            $("#view #email").text(dataEmployee[0].COD_EMAIL);
-            $("#view #direccion").text(dataEmployee[0].COD_DIRECCION);
-            
+            $("#view #fecActualizacion").text(dataEmployee[0].FEC_ACTUALIZACION.split('T')[0]);
+            $("#view #numTelefono").text(dataEmployee[0].NUM_TELEFONO);
+            $("#view #email").text(dataEmployee[0].VAL_EMAIL);
+            $("#view #direccion").text(dataEmployee[0].DES_DIRECCION);
+
         });
 
-        $(document).on("click", "#deleteInfo", function() {
+        /* $(document).on("click", "#deleteInfo", function() {
             const id = $(this).data("id");
 
             const data = {
-                COD_EMPLEADO: id,
-                VAL_ROL: "-", //simulacion de eliminar, colocarlo asi
+                PI_COD_EMPLEADO: id,
+                PB_VAL_ROL: "-", //simulacion de eliminar, colocarlo asi
 
             };
 
@@ -312,7 +293,6 @@
                 });
 
 
-        });
-
+        }); */
     </script>
 @stop
