@@ -27,6 +27,11 @@ class EmployeesController extends Controller
         $heads = [
             "COD_EMPLEADO" => "ID",
             "VAL_ROL" => "Rol",
+            "NOMBRE_COMPLETO" => "Nombre Completo",
+            "DNI_PERSONA" => "DNI",
+            "VAL_EMAIL" => "EMAIL",
+            "SEX_PERSONA" => "Sexo",
+            "DES_DIRECCION" => "Dirección",
             "Acciones" => "Acciones"
         ];
 
