@@ -75,6 +75,7 @@ class VehicleController extends Controller
         ];
 
 
+
         //informacion a mandar al blade
         $information = [
             'headsTable' => array_values($heads),
@@ -83,7 +84,6 @@ class VehicleController extends Controller
 
         return view("vehicles")->with('info', $information);
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -125,5 +125,46 @@ class VehicleController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+}
+
+class VehicleSelectionController extends Controller
+{
+    public $url = "https://road-master-server.vercel.app";
+    public function showSelectionPage()
+    {
+        $configSelect = [
+            "maximumSelectionLength" => 3
+        ];
+
+        // Pasar la configuración a la vista
+        echo '<script>';
+        echo 'var configSelect = ' . json_encode($configSelect) . ';';
+        echo '</script>';
+    }
+
+    public function getVehicleDetails(Request $request)
+    {
+        $id = $request->query('id');
+
+        // Realiza una solicitud GET a la API para obtener los detalles del vehículo
+        $response = Http::get("{$this->url}/vehiculos?id={$id}");
+        $vehicle = $response->json();
+        if ($vehicle) {
+            // Devuelve los detalles del vehículo en formato JSON
+            return response()->json([
+                'imagen' => $vehicle['imagen'],
+                'NOM_VEHICULO' => $vehicle['nombre'],
+                'DES_VEHICULO' => $vehicle['descripcion'],
+                'TIP_VEHICULO' => $vehicle['tipo'],
+                'NOM_MARCA' => $vehicle['marca'],
+                'NOM_MODELO' => $vehicle['modelo'],
+                'NOM_SUCURSAL' => $vehicle['sucursal'],
+                'FEC_INGRESO' => $vehicle['fecha_ingreso'],
+            ]);
+        } else {
+            // Devuelve un error si el vehículo no se encuentra
+            return response()->json(['error' => 'Vehículo no encontrado'], 404);
+        }
     }
 }
