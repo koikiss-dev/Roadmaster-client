@@ -317,131 +317,127 @@
 
     </x-adminlte-modal>
 
-<!-- Sección de selección de vehículos -->
-<section>
-    <h2>Seleccionar Para Comparar Vehículos</h2>
-    <x-adminlte-select2 id="selectVehiculos" name="vehiculos[]" multiple data-placeholder="Seleccione 2 o 3 vehículos" style="width: 100%;">
-        @foreach ($info['config']['data'] as $row)
-            <option value="{{ $row[0] }}">{{ $row[1] }}</option> <!--  -->
-        @endforeach
-    </x-adminlte-select2>
-</section>
 
-<!-- Sección de visualización de vehículos seleccionados -->
-<section id="selectedVehicles" class="d-flex flex-wrap">
-    <!--  -->
-</section>
+
+    <!-- Sección de selección de vehículos -->
+    <section>
+        <h2>Seleccionar Para Comparar Vehículos</h2>
+        <x-adminlte-select2 id="selectVehiculos" name="vehiculos[]" multiple
+            data-placeholder="Seleccione 2 o 3 vehículos" style="width: 100%;">
+            @foreach ($info['config']['data'] as $row)
+                <option value="{{ $row[0] }}">{{ $row[1] }}</option> <!--  -->
+            @endforeach
+        </x-adminlte-select2>
+    </section>
+
+    <!-- Sección de visualización de vehículos seleccionados -->
+    <section id="selectedVehicles" class="d-flex flex-wrap">
+        <!--  -->
+    </section>
 @stop
 
 @push('css')
-<style>
-/* Estilos para el selector de vehículos */
-#selectVehiculos {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
-}
+    <style>
+        /* Estilos para el selector de vehículos */
+        #selectVehiculos {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
 
-/* Estilos para Select2 */
-.select2-container--default .select2-selection--multiple {
-    border: 1px solid #ced4da;
-    background-color: #6c756d; /* color del fondo del select2 Gris  */
-    height: auto;
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    font-size: 1.5em;
-}
+        /* Estilos para Select2 */
+        .select2-container--default .select2-selection--multiple {
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: #6c757d; /*  color del cuadro de seleccionGris oscuro */
-    border-color: #6c757d;
-    color: #fff;
-    padding: 3px 10px;
-    margin: 3px 0 3px 5px;
-    border-radius: 20px;
-}
+            height: auto;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 1.1em;
+        }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-    color: #fff;
-    margin-right: 10px;
-}
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #070707;
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
-    color: #ff6666;
-}
+            color: #fff;
+            padding: 3px 10px;
+            margin: 3px 0 3px 5px;
+            border-radius: 100px;
+        }
 
-.select2-container--default .select2-selection--multiple .select2-selection__rendered {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+            color: #fff;
+            margin-right: 10px;
+        }
 
-.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
-    white-space: nowrap;
-}
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+            color: #ff6666;
+        }
 
-/* Estilos para la sección de visualización de vehículos */
-#selectedVehicles {
-    margin-top: 2rem;
-}
+        .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
 
-#selectedVehicles .card {
-    width: calc(33.33% - 1rem); /* Mostrar 3 tarjetas en una fila */
-    margin: 0.5rem;
-    background-color: #f0f0f1; /* Fondo gris claro */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
+        .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+            white-space: nowrap;
+        }
 
-#selectedVehicles .card:hover {
-    transform: translateY(-5px);
-}
+        /* Estilos para la sección de visualización de vehículos */
+        #selectedVehicles {
+            margin-top: 2rem;
+        }
 
-#selectedVehicles .card img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    max-height: 150px;
-    object-fit: cover;
-}
+        #selectedVehicles .card {
+            width: calc(33.33% - 1rem);
+            margin: 0.5rem;
+            background-color: #f0f0f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
 
-#selectedVehicles .card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #333;
-}
+        #selectedVehicles .card:hover {
+            transform: translateY(-5px);
+        }
 
-#selectedVehicles .card-text {
-    font-size: 0.875rem;
-    color: #666;
-}
+        #selectedVehicles .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+        }
 
-/* Ajustes responsivos */
-@media (max-width: 768px) {
-    #selectedVehicles .card {
-        width: calc(50% - 1rem); /* Mostrar 2 tarjetas en una fila en pantallas medianas */
-    }
-}
+        #selectedVehicles .card-text {
+            font-size: 0.875rem;
+            color: #666;
+        }
 
-@media (max-width: 576px) {
-    #selectedVehicles .card {
-        width: calc(100% - 1rem); /* Mostrar 1 tarjeta en una fila en pantallas pequeñas */
-    }
-}
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            #selectedVehicles .card {
+                width: calc(50% - 1rem);
+                /* Mostrar 2 tarjetas en una fila en pantallas medianas */
+            }
+        }
 
-section {
-    margin: 20px 0;
-}
+        @media (max-width: 576px) {
+            #selectedVehicles .card {
+                width: calc(100% - 1rem);
+                /* Mostrar 1 tarjeta en una fila en pantallas pequeñas */
+            }
+        }
 
-h2 {
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: left;
-}
-</style>
+        section {
+            margin: 20px 0;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: left;
+        }
+    </style>
 @endpush
 
 
@@ -658,37 +654,31 @@ h2 {
 
         });
         $(document).ready(function() {
-    // Inicializar Select2 con las opciones requeridas
-    $('#selectVehiculos').select2({
-        width: '100%',
-        dropdownAutoWidth: true,
-    });
+            // Inicializar Select2 con las opciones requeridas
+            $('#selectVehiculos').select2({
+                width: '100%',
+                dropdownAutoWidth: true,
+                maximumSelectionLength: 3,
+            });
 
-    // Función para manejar la selección de vehículos
-    function handleVehicleSelection() {
-        const selectedVehicles = $('#selectVehiculos').val();
+            // Función para manejar la selección de vehículos
+            function handleVehicleSelection() {
+                const selectedVehicles = $('#selectVehiculos').val();
 
-        if (selectedVehicles.length < 2) {
-            //alert('Por favor seleccione al menos 2 vehículos.');
-        } else if (selectedVehicles.length > 3) {
-            alert('No se pueden seleccionar más de 3 vehículos.');
-        }
 
-        // Mostrar los vehículos seleccionados (hasta 3)
-        $('#selectedVehicles').empty();
-        const vehiclesToShow = selectedVehicles.slice(0, 3); // Limitar a 3 vehículos
+                // Mostrar los vehículos seleccionados (hasta 3)
+                $('#selectedVehicles').empty();
 
-        vehiclesToShow.forEach(async function(vehicleId) {
-            try {
-                const response = await fetch(
-                    `https://road-master-server.vercel.app/vehiculo?id=${vehicleId}`
-                );
-                const data = await response.json();
-                const vehicleData = data[0];
+                selectedVehicles.forEach(async function(vehicleId) {
+                    try {
+                        const response = await fetch(
+                            `https://road-master-server.vercel.app/vehiculo?id=${vehicleId}`
+                        );
+                        const data = await response.json();
+                        const vehicleData = data[0];
 
-                const vehicleCard = `
+                        const vehicleCard = `
                     <div class="card m-2" data-vehicle-id="${vehicleId}">
-                        <img src="${vehicleData.imagen}" class="card-img-top" alt="${vehicleData.NOM_VEHICULO}">
                         <div class="card-body">
                             <h5 class="card-title">${vehicleData.NOM_VEHICULO}</h5>
                             <p class="card-text">Descripción: ${vehicleData.DES_VEHICULO}</p>
@@ -698,66 +688,32 @@ h2 {
                             <p class="card-text">Marca: ${vehicleData.NOM_MARCA}</p>
                             <p class="card-text">Modelo: ${vehicleData.NOM_MODELO}</p>
                             <p class="card-text">Sucursal: ${vehicleData.NOM_SUCURSAL}</p>
-                            <button class="btn btn-danger btn-eliminar">Eliminar</button>
+                            
                         </div>
                     </div>
                 `;
-                $('#selectedVehicles').append(vehicleCard);
-            } catch (error) {
-                console.error('Error al obtener los detalles del vehículo:', error);
-                alert('Error al obtener los detalles del vehículo.');
+                        $('#selectedVehicles').append(vehicleCard);
+                    } catch (error) {
+                        console.error('Error al obtener los detalles del vehículo:', error);
+                        alert('Error al obtener los detalles del vehículo.');
+                    }
+                });
+
             }
+
+            // Función de debounce para mejorar la fluidez en la selección
+            function debounce(func, wait) {
+                let timeout;
+                return function(...args) {
+                    const context = this;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(context, args), wait);
+                };
+            }
+
+            // Aplicar la función handleVehicleSelection con debounce
+            $('#selectVehiculos').on('change', debounce(handleVehicleSelection, 300));
+
         });
-
-        // Desactivar el selector si ya se han seleccionado 3 vehículos
-        if (selectedVehicles.length > 3) {
-            $('#selectVehiculos').prop('disabled', true);
-        } else {
-            $('#selectVehiculos').prop('disabled', false);
-        }
-    }
-
-    // Función de debounce para mejorar la fluidez en la selección
-    function debounce(func, wait) {
-        let timeout;
-        return function(...args) {
-            const context = this;
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(context, args), wait);
-        };
-    }
-
-    // Aplicar la función handleVehicleSelection con debounce
-    $('#selectVehiculos').on('change', debounce(handleVehicleSelection, 300));
-
-    // Función para manejar la eliminación de vehículos desde las tarjetas
-    $(document).on('click', '.btn-eliminar', function() {
-        const vehicleId = $(this).closest('.card').data('vehicle-id');
-
-        // Obtener los datos seleccionados en formato de arreglo de objetos
-        const selectedData = $('#selectVehiculos').select2('data');
-
-        // Encontrar el índice del elemento a eliminar
-        const indexToRemove = selectedData.findIndex(item => item.id === vehicleId);
-
-        // Si el elemento existe, eliminarlo y actualizar el Select2
-        if (indexToRemove !== -1) {
-            selectedData.splice(indexToRemove, 1);
-            $('#selectVehiculos').val(selectedData.map(item => item.id)).trigger('change');
-        }
-
-        // Eliminar la tarjeta correspondiente
-        $(this).closest('.card').remove();
-
-        // Habilitar la selección si ahora hay menos de 3 elementos
-        if (selectedData.length < 3) {
-            $('#selectVehiculos').prop('disabled', false);
-        }
-
-        // Volver a llamar a la función para actualizar la vista
-        handleVehicleSelection();
-    });
-});
-
     </script>
 @stop

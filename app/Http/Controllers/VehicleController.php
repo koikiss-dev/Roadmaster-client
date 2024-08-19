@@ -75,6 +75,7 @@ class VehicleController extends Controller
         ];
 
 
+
         //informacion a mandar al blade
         $information = [
             'headsTable' => array_values($heads),
@@ -82,7 +83,6 @@ class VehicleController extends Controller
         ];
 
         return view("vehicles")->with('info', $information);
-
     }
     /**
      * Show the form for creating a new resource.
@@ -130,6 +130,7 @@ class VehicleController extends Controller
 
 class VehicleSelectionController extends Controller
 {
+    public $url = "https://road-master-server.vercel.app";
     public function showSelectionPage()
     {
         $configSelect = [
