@@ -27,6 +27,11 @@ class EmployeesController extends Controller
         $heads = [
             "COD_EMPLEADO" => "ID",
             "VAL_ROL" => "Rol",
+            "NOMBRE_COMPLETO" => "Nombre Completo",
+            "DNI_PERSONA" => "DNI",
+            "VAL_EMAIL" => "EMAIL",
+            "SEX_PERSONA" => "Sexo",
+            "DES_DIRECCION" => "Dirección",
             "Acciones" => "Acciones"
         ];
 
@@ -51,7 +56,7 @@ class EmployeesController extends Controller
                 <i class="fa fa-lg fa-fw fa-eye"></i>
             </button>';
 
-                    $row[] = '<nobr>' . $btnEdit . $btnDelete . $btnDetails . '</nobr>';
+                    $row[] = '<nobr>' . $btnDetails . '</nobr>';
                 } else {
                     $row[] = $EmployeesDataToJson[$i][$key];
                 }
