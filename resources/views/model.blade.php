@@ -27,7 +27,7 @@
             <label for="nomModelo">Nombre del modelo</label>
             <p id="nomModelo"></p>
         </div>
-        </div>
+
         <div class="form-group">
             <label for="fecIngreso">Fecha de Ingreso</label>
             <p id="fecIngreso"></p>
@@ -44,11 +44,10 @@
         <form id="insertForm">
             <div class="row">
                 <x-adminlte-input name="INSERT_PV_NOM_MODELO" label="Nombre del Modelo"
-                    placeholder="Ingresa el nombre del Modelo" fgroup-class="col-md-6" />    
-            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success"
-                icon="fas fa-lg fa-save" />
-        </div>
-    </form>
+                    placeholder="Ingresa el nombre del Modelo" fgroup-class="col-md-6" />
+            </div>
+            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save" />
+        </form>
     </x-adminlte-modal>
 
 
@@ -57,15 +56,13 @@
         <form id="updateForm">
             <div class="row">
                 <x-adminlte-input name="UPDATE_PI_COD_MODELO" label="Id del Modelo" value=""
-                    placeholder="Ingresa el id del Modelo" id="cod" readonly="readonly"
-                    fgroup-class="col-md-6" />
+                    placeholder="Ingresa el id del Modelo" id="cod" readonly="readonly" fgroup-class="col-md-6" />
 
                 <x-adminlte-input name="UPDATE_PV_NOM_MODELO" label="Nombre del Modelo"
                     placeholder="Ingresa el nombre del Modelo" fgroup-class="col-md-6" />
 
             </div>
-            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success"
-                icon="fas fa-lg fa-save" />
+            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save" />
         </form>
 
 
@@ -158,7 +155,7 @@
 
             $("#view #nomModelo").text(dataModel[0].NOM_MODELO);
             $("#view #fecIngreso").text(dataModel[0].FEC_INGRESO.split('T')[0] + " " + dataModel[
-                    0] .FEC_INGRESO.split('T')[1].split('.')[0]);
+                0].FEC_INGRESO.split('T')[1].split('.')[0]);
             $("#view #fecActualizacion").text(dataModel[0].FEC_ACTUALIZACION.split('T')[0] + " " +
                 dataModel[0].FEC_ACTUALIZACION.split('T')[1].split('.')[0]);
         });
