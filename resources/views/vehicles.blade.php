@@ -318,7 +318,129 @@
     </x-adminlte-modal>
 
 
+
+    <!-- Sección de selección de vehículos -->
+    <section>
+        <h2>Seleccionar Para Comparar Vehículos</h2>
+        <x-adminlte-select2 id="selectVehiculos" name="vehiculos[]" multiple
+            data-placeholder="Seleccione 2 o 3 vehículos" style="width: 100%;">
+            @foreach ($info['config']['data'] as $row)
+                <option value="{{ $row[0] }}">{{ $row[1] }}</option> <!--  -->
+            @endforeach
+        </x-adminlte-select2>
+    </section>
+
+    <!-- Sección de visualización de vehículos seleccionados -->
+    <section id="selectedVehicles" class="d-flex flex-wrap">
+        <!--  -->
+    </section>
 @stop
+
+@push('css')
+    <style>
+        /* Estilos para el selector de vehículos */
+        #selectVehiculos {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para Select2 */
+        .select2-container--default .select2-selection--multiple {
+
+            height: auto;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 1.1em;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #070707;
+
+            color: #fff;
+            padding: 3px 10px;
+            margin: 3px 0 3px 5px;
+            border-radius: 100px;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+            color: #ff6666;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+            white-space: nowrap;
+        }
+
+        /* Estilos para la sección de visualización de vehículos */
+        #selectedVehicles {
+            margin-top: 2rem;
+        }
+
+        #selectedVehicles .card {
+            width: calc(33.33% - 1rem);
+            margin: 0.5rem;
+            background-color: #f0f0f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #selectedVehicles .card:hover {
+            transform: translateY(-5px);
+        }
+
+        #selectedVehicles .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        #selectedVehicles .card-text {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            #selectedVehicles .card {
+                width: calc(50% - 1rem);
+                /* Mostrar 2 tarjetas en una fila en pantallas medianas */
+            }
+        }
+
+        @media (max-width: 576px) {
+            #selectedVehicles .card {
+                width: calc(100% - 1rem);
+                /* Mostrar 1 tarjeta en una fila en pantallas pequeñas */
+            }
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: left;
+        }
+    </style>
+@endpush
+
+
 
 @section('js')
     <script>
@@ -529,6 +651,68 @@
                     console.error("Error:", error);
                 });
 
+
+        });
+        $(document).ready(function() {
+            // Inicializar Select2 con las opciones requeridas
+            $('#selectVehiculos').select2({
+                width: '100%',
+                dropdownAutoWidth: true,
+                maximumSelectionLength: 3,
+            });
+
+            // Función para manejar la selección de vehículos
+            function handleVehicleSelection() {
+                const selectedVehicles = $('#selectVehiculos').val();
+
+
+                // Mostrar los vehículos seleccionados (hasta 3)
+                $('#selectedVehicles').empty();
+
+                selectedVehicles.forEach(async function(vehicleId) {
+                    try {
+                        const response = await fetch(
+                            `https://road-master-server.vercel.app/vehiculo?id=${vehicleId}`
+                        );
+                        const data = await response.json();
+                        const vehicleData = data[0];
+
+                        const vehicleCard = `
+                    <div class="card m-2" data-vehicle-id="${vehicleId}">
+                        <div class="card-body">
+                            <h5 class="card-title">${vehicleData.NOM_VEHICULO}</h5>
+                            <p class="card-text">Descripción: ${vehicleData.DES_VEHICULO}</p>
+                            <p class="card-text">Precio: ${vehicleData.NUM_PRECIO}</p>
+                            <p class="card-text">Fecha de Lanzamiento: ${vehicleData.FEC_LANZAMIENTO.split('T')[0]}</p>
+                            <p class="card-text">Tipo: ${vehicleData.TIP_VEHICULO}</p>
+                            <p class="card-text">Marca: ${vehicleData.NOM_MARCA}</p>
+                            <p class="card-text">Modelo: ${vehicleData.NOM_MODELO}</p>
+                            <p class="card-text">Sucursal: ${vehicleData.NOM_SUCURSAL}</p>
+                            
+                        </div>
+                    </div>
+                `;
+                        $('#selectedVehicles').append(vehicleCard);
+                    } catch (error) {
+                        console.error('Error al obtener los detalles del vehículo:', error);
+                        alert('Error al obtener los detalles del vehículo.');
+                    }
+                });
+
+            }
+
+            // Función de debounce para mejorar la fluidez en la selección
+            function debounce(func, wait) {
+                let timeout;
+                return function(...args) {
+                    const context = this;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(context, args), wait);
+                };
+            }
+
+            // Aplicar la función handleVehicleSelection con debounce
+            $('#selectVehiculos').on('change', debounce(handleVehicleSelection, 300));
 
         });
     </script>
