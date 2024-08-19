@@ -28,16 +28,14 @@
         </div>
 
         <div class="form-group">
-            <label for="codSucursal">codigo Sucursal</label>
-            <p id="codSucursal"></p>
-         <div class="form-group">
 
-            <label for="codGerente">codigo Gerente</label>
-            <p id="codGerente"></p>
+            <label for="codGerente">Gerente</label>
+            <p id="gerente"></p>
+        </div>
 
-            <div class="form-group">
-            <label for="codubicacion">codigo Ubicacion</label>
-            <p id="codubicacion"></p>
+        <div class="form-group">
+            <label for="codubicacion">Ubicacion</label>
+            <p id="ubicacion"></p>
 
         </div>
     </x-adminlte-modal>
@@ -48,22 +46,18 @@
         <form id="insertForm">
             <div class="row">
 
-                <x-adminlte-input name="PI_COD_SUCURSAL" label="Codigo de la Sucursal"
-                    placeholder="Ingresa el Codigo de la Sucursal" fgroup-class="col-md-6" />
-
-                <x-adminlte-input name="PV_NOM_SUCURSAL" label="Nombre de la Sucursal"
+                <x-adminlte-input name="INSERT_PV_NOM_SUCURSAL" label="Nombre de la Sucursal"
                     placeholder="Ingresa el Nombre de la Sucursal" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_COD_GERENTE" label="Codigo de Gerente"
+                <x-adminlte-input name="INSERT_PI_COD_GERENTE" type="number" label="Codigo de Gerente"
                     placeholder="Ingresa el Codigo del Gerente" fgroup-class="col-md-6" />
 
-                    <x-adminlte-input name="PI_COD_UBICACIONES" label="Codigo de Ubicaciones"
-                    placeholder="Ingresa el codigo de la ubicacion" fgroup-class="col-md-6" value="1" />
+                <x-adminlte-input name="INSERT_PI_COD_UBICACION" type="number" label="Codigo de Ubicacion"
+                    placeholder="Ingresa el codigo de la ubicacion" fgroup-class="col-md-6" />
 
 
             </div>
-            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success"
-                icon="fas fa-lg fa-save" />
+            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save" />
         </form>
     </x-adminlte-modal>
 
@@ -74,20 +68,19 @@
 
             <div class="row">
 
-            <x-adminlte-input name="PI_COD_SUCURSAL" label="Codigo de la Sucursal"
+                <x-adminlte-input name="UPDATE_PI_COD_SUCURSAL" id="cod" readonly label="Codigo de la Sucursal"
                     placeholder="Ingresa el Codigo de la Sucursal" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PV_NOM_SUCURSAL" label="Nombre de la Sucursal"
+                <x-adminlte-input name="UPDATE_PV_NOM_SUCURSAL" label="Nombre de la Sucursal"
                     placeholder="Ingresa el Nombre de la Sucursal" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_COD_GERENTE" label="Codigo de Gerente"
+                <x-adminlte-input name="UPDATE_PI_COD_GERENTE" type="number" label="Codigo de Gerente"
                     placeholder="Ingresa el Codigo del Gerente" fgroup-class="col-md-6" />
 
-                    <x-adminlte-input name="PI_COD_UBICACIONES" label="Codigo de Ubicaciones"
-                    placeholder="Ingresa el codigo de la ubicacion" fgroup-class="col-md-6" value="1" />
+                <x-adminlte-input name="UPDATE_PI_COD_UBICACION" type="number" label="Codigo de Ubicacion"
+                    placeholder="Ingresa el codigo de la ubicacion" fgroup-class="col-md-6" />
             </div>
-            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success"
-                icon="fas fa-lg fa-save" />
+            <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save" />
         </form>
 
         <span id="idField"></span>
@@ -98,22 +91,23 @@
 
 @section('js')
     <script>
-
-
+        $(document).on("click", "#editInfo", async function() {
+            const id = $(this).data("id");
+            $('#cod').val(id);
+        });
         //update vehicle data
         document.getElementById("updateForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
             const data = {
-
-                PV_NOM_SUCURSAL: document.querySelector("[name='PV_NOM_SUCURSAL']").value,
-                PI_COD_GERENTE: document.querySelector("[name='PI_COD_GERENTE']").value,
-                PI_COD_UBICACIONES: document.querySelector("[name='PI_COD_UBICACIONES']").value,
-                PI_COD_SUCURSAL: document.querySelector("[name='PI_COD_SUCURSAL']").value,
+                PI_COD_SUCURSAL: document.getElementById("cod").value,
+                PV_NOM_SUCURSAL: document.querySelector("[name='UPDATE_PV_NOM_SUCURSAL']").value,
+                PI_COD_GERENTE: document.querySelector("[name='UPDATE_PI_COD_GERENTE']").value,
+                PI_COD_UBICACION: document.querySelector("[name='UPDATE_PI_COD_UBICACION']").value,
             };
 
 
-            fetch(`https://road-master-server.vercel.app/vehiculo/`, {
+            fetch(`https://road-master-server.vercel.app/sucursal/`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json"
@@ -136,14 +130,13 @@
             event.preventDefault();
 
             const data = {
-                PV_NOM_SUCURSAL: document.querySelector("[name='PV_NOM_SUCURSAL']").value,
-                PI_COD_GERENTE: document.querySelector("[name='PI_COD_GERENTE']").value,
-                PI_COD_UBICACIONES: document.querySelector("[name='PI_COD_UBICACIONES']").value,
-                PI_COD_SUCURSAL: document.querySelector("[name='PI_COD_SUCURSAL']").value,
+                PV_NOM_SUCURSAL: document.querySelector("[name='INSERT_PV_NOM_SUCURSAL']").value,
+                PI_COD_GERENTE: document.querySelector("[name='INSERT_PI_COD_GERENTE']").value,
+                PI_COD_UBICACION: document.querySelector("[name='INSERT_PI_COD_UBICACION']").value,
             };
 
 
-            fetch(`https://road-master-server.vercel.app/vehiculos/`, {
+            fetch(`https://road-master-server.vercel.app/sucursales/`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -163,21 +156,21 @@
         //view vehicle info
         $(document).on("click", "#showInfo", async function() {
             const id = $(this).data("id");
-            const dataVehicle = [];
+            const dataSucursal = [];
 
             try {
                 const response = await fetch(
-                    `https://road-master-server.vercel.app/vehiculo?id=${id}`
+                    `https://road-master-server.vercel.app/sucursal?id=${id}`
                 );
                 const data = await response.json();
-                await dataVehicle.push(data[0]);
+                await dataSucursal.push(data[0]);
             } catch (error) {
                 console.log(error);
             }
-            $("#view #codSucursal").text(dataVehicle[0].COD_SUCURSAL);
-            $("#view #nomSucursal").text(dataVehicle[0].NOM_SUCURSAL);
-            $("#view #codGerente").text(dataVehicle[0].COD_GERENTE);
-            $("#view #codubicacion").text(dataVehicle[0].COD_UBICACION);
+            $("#view #codSucursal").text(dataSucursal[0].COD_SUCURSAL);
+            $("#view #nomSucursal").text(dataSucursal[0].NOM_SUCURSAL);
+            $("#view #gerente").text(dataSucursal[0].NOMBRE_COMPLETO);
+            $("#view #ubicacion").text(dataSucursal[0].DES_UBICACION);
 
         });
 
@@ -187,12 +180,12 @@
             const id = $(this).data("id");
 
             const data = {
-                PI_COD_VEHICULO: id,
-                PV_NOM_VEHICULO: "-", //simulacion de eliminar, colocarlo asi
+                PI_COD_SUCURSAL: id,
+                PV_NOM_SUCURSAL: "-", //simulacion de eliminar, colocarlo asi
 
             };
 
-            fetch(`https://road-master-server.vercel.app/vehiculo/`, {
+            fetch(`https://road-master-server.vercel.app/sucursal/`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json"

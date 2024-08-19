@@ -29,8 +29,9 @@ class BranchController extends Controller
         $heads = [
             "COD_SUCURSAL" => "ID",
             "NOM_SUCURSAL" => "Nombre",
-            "COD_GERENTE" => "Gerente",
-            "COD_UBICACION" => "Codigo Ubicacion",
+            "NOMBRE_COMPLETO" => "Nombre del gerente",
+            "DES_UBICACION" => "Ubicación",
+            "FEC_INGRESO" => "Fecha de ingreso",
             "Acciones" => "Acciones"
         ];
 
@@ -77,7 +78,7 @@ class BranchController extends Controller
             'config' => $configTable,
         ];
 
-        return view("Branch")->with('info', $information);
+        return view("branch")->with('info', $information);
     }
 
     /**
