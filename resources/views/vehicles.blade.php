@@ -126,88 +126,88 @@
     <x-adminlte-modal onclick="" id="insert" size="lg" title="Insertar un nuevo Vehiculo">
         <form id="insertForm">
             <div class="row">
-                <x-adminlte-input name="PV_NOM_VEHICULO" label="Nombre del Vehículo"
+                <x-adminlte-input name="INSERT_PV_NOM_VEHICULO" label="Nombre del Vehículo"
                     placeholder="Ingresa el nombre del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PV_DES_VEHICULO" label="Descripción del Vehículo"
+                <x-adminlte-input name="INSERT_PV_DES_VEHICULO" label="Descripción del Vehículo"
                     placeholder="Ingresa la descripción del vehículo" fgroup-class="col-md-6" />
 
 
-                <x-adminlte-input name="PV_URL_IMAGE" label="Url de la imagen" placeholder="Ingresa la url de la imagen"
-                    fgroup-class="col-md-6" />
+                <x-adminlte-input name="INSERT_PV_URL_IMAGE" label="Url de la imagen"
+                    placeholder="Ingresa la url de la imagen" fgroup-class="col-md-6" />
 
-                <x-adminlte-select name="PE_TIPO_IMAGEN" fgroup-class="col-md-6" label="Tipo de imagen">
+                <x-adminlte-select name="INSERT_PE_TIPO_IMAGEN" fgroup-class="col-md-6" label="Tipo de imagen">
                     <x-adminlte-options :options="['BANNER', 'CONTENIDO']" placeholder="Tipo imagen" />
                 </x-adminlte-select>
 
-                <x-adminlte-input name="PF_NUM_PRECIO" type="number" step="0.01" label="Precio"
+                <x-adminlte-input name="INSERT_PF_NUM_PRECIO" type="number" step="0.01" label="Precio"
                     placeholder="Ingresa el precio del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PD_FEC_LANZAMIENTO" type="datetime-local" label="Fecha de Lanzamiento"
+                <x-adminlte-input name="INSERT_PD_FEC_LANZAMIENTO" type="datetime-local" label="Fecha de Lanzamiento"
                     placeholder="Ingresa la fecha de lanzamiento" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PV_TIP_VEHICULO" label="Tipo de Vehículo"
+                <x-adminlte-input name="INSERT_PV_TIP_VEHICULO" label="Tipo de Vehículo"
                     placeholder="Ingresa el tipo de vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-select name="PE_TIP_MOTOR" label="Tipo de Motor" fgroup-class="col-md-6">
+                <x-adminlte-select name="INSERT_PE_TIP_MOTOR" label="Tipo de Motor" fgroup-class="col-md-6">
                     <x-adminlte-options :options="['GASOLINA', 'DIESEL', 'ELECTRICO', 'HIBRIDO']" placeholder="Ingresa el tipo de motor" />
                 </x-adminlte-select>
 
-                <x-adminlte-select name="PE_TIP_TRANSMISION" label="Tipo de Transmisión" fgroup-class="col-md-6">
+                <x-adminlte-select name="INSERT_PE_TIP_TRANSMISION" label="Tipo de Transmisión" fgroup-class="col-md-6">
                     <x-adminlte-options :options="['MANUAL', 'AUTOMATICA', 'CVT']" placeholder="Ingresa el tipo de transmisión" />
                 </x-adminlte-select>
 
-                <x-adminlte-select name="PE_TIP_TRACCION" label="Tipo de tracción" fgroup-class="col-md-6">
+                <x-adminlte-select name="INSERT_PE_TIP_TRACCION" label="Tipo de tracción" fgroup-class="col-md-6">
                     <x-adminlte-options :options="['DELANTERA', 'TRASERA', 'AWD', '4WD']" placeholder="Ingresa el tipo de tracción" />
                 </x-adminlte-select>
 
-                <x-adminlte-input name="PF_NUM_CONSUMO_COMBUSTIBLE_KM" label="Consumo de Combustible (km/l)"
+                <x-adminlte-input name="INSERT_PF_NUM_CONSUMO_COMBUSTIBLE_KM" label="Consumo de Combustible (km/l)"
                     type="number" step="0.01" placeholder="Ingresa el consumo de combustible"
                     fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PF_NUM_CAPACIDAD_TANQUE" type="number" label="Capacidad del Tanque (L)"
+                <x-adminlte-input name="INSERT_PF_NUM_CAPACIDAD_TANQUE" type="number" label="Capacidad del Tanque (L)"
                     placeholder="Ingresa la capacidad del tanque" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_LONGITUD" type="number" label="Longitud (mm)"
+                <x-adminlte-input name="INSERT_PI_NUM_LONGITUD" type="number" label="Longitud (mm)"
                     placeholder="Ingresa la longitud del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_ANCHO" type="number" label="Ancho (mm)"
+                <x-adminlte-input name="INSERT_PI_NUM_ANCHO" type="number" label="Ancho (mm)"
                     placeholder="Ingresa el ancho del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_ALTURA" type="number" label="Altura (mm)"
+                <x-adminlte-input name="INSERT_PI_NUM_ALTURA" type="number" label="Altura (mm)"
                     placeholder="Ingresa la altura del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_PESO" type="number" label="Peso (kg)"
+                <x-adminlte-input name="INSERT_PI_NUM_PESO" type="number" label="Peso (kg)"
                     placeholder="Ingresa el peso del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_CAPACIDAD_CARGA_KG" type="number" label="Capacidad de Carga (kg)"
+                <x-adminlte-input name="INSERT_PI_NUM_CAPACIDAD_CARGA_KG" type="number" label="Capacidad de Carga (kg)"
                     placeholder="Ingresa la capacidad de carga" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_ASIENTOS" type="number" label="Número de Asientos"
+                <x-adminlte-input name="INSERT_PI_NUM_ASIENTOS" type="number" label="Número de Asientos"
                     placeholder="Ingresa el número de asientos" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_AIRBAGS" type="number" label="Número de Airbags"
+                <x-adminlte-input name="INSERT_PI_NUM_AIRBAGS" type="number" label="Número de Airbags"
                     placeholder="Ingresa el número de airbags" fgroup-class="col-md-6" />
 
-                <x-adminlte-select name="PB_VAL_FRENOS" label="Disponibilidad de frenos" fgroup-class="col-md-6">
+                <x-adminlte-select name="INSERT_PB_VAL_FRENOS" label="Disponibilidad de frenos" fgroup-class="col-md-6">
 
                     <x-adminlte-options :options="['SI', 'NO']" placeholder="Tiene frenos" />
                 </x-adminlte-select>
 
 
-                <x-adminlte-select name="PB_VAL_VENDIDO" label="Ha sido vendido" fgroup-class="col-md-6">
+                <x-adminlte-select name="INSERT_PB_VAL_VENDIDO" label="Ha sido vendido" fgroup-class="col-md-6">
 
                     <x-adminlte-options :options="['SI', 'NO']" placeholder="Ha sido vendido" />
                 </x-adminlte-select>
 
-                <x-adminlte-input name="PI_COD_MARCA" type="number" label="Marca del Vehículo"
+                <x-adminlte-input name="INSERT_PI_COD_MARCA" type="number" label="Marca del Vehículo"
                     placeholder="Ingresa la marca del vehículo" fgroup-class="col-md-6" />
 
 
-                <x-adminlte-input name="PI_COD_MODELO" type="number" label="Modelo del Vehículo"
+                <x-adminlte-input name="INSERT_PI_COD_MODELO" type="number" label="Modelo del Vehículo"
                     placeholder="Ingresa el modelo del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_COD_SUCURSAL" type="number" label="Nombre de la Sucursal"
+                <x-adminlte-input name="INSERT_PI_COD_SUCURSAL" type="number" label="Nombre de la Sucursal"
                     placeholder="Ingresa el nombre de la sucursal" fgroup-class="col-md-6" />
             </div>
             <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success"
@@ -219,104 +219,102 @@
     {{-- este es el modal para editar un registro, cambiar solo title y los campos a mostrar --}}
     <x-adminlte-modal onclick="" id="edit" size="lg" title="Modifica un vehiculo">
         <form id="updateForm">
-
             <div class="row">
-
-                <x-adminlte-input name="PI_COD_VEHICULO" label="Id del Vehículo" value=""
+                <x-adminlte-input name="UPDATE_PI_COD_VEHICULO" label="Id del Vehículo" value=""
                     placeholder="Ingresa el id del vehículo" id="cod" readonly="readonly"
                     fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PV_NOM_VEHICULO" label="Nombre del Vehículo"
+                <x-adminlte-input name="UPDATE_PV_NOM_VEHICULO" label="Nombre del Vehículo"
                     placeholder="Ingresa el nombre del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PV_DES_VEHICULO" label="Descripción del Vehículo"
+                <x-adminlte-input name="UPDATE_PV_DES_VEHICULO" label="Descripción del Vehículo"
                     placeholder="Ingresa la descripción del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_COD_IMAGEN" type="number" label="Codigo imagen"
+                <x-adminlte-input name="UPDATE_PI_COD_IMAGEN" type="number" label="Codigo imagen"
                     placeholder="Ingresa el precio del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PV_URL_IMAGE" label="Url de la imagen" placeholder="Ingresa la url de la imagen"
-                    fgroup-class="col-md-6" />
+                <x-adminlte-input name="UPDATE_PV_URL_IMAGE" label="Url de la imagen"
+                    placeholder="Ingresa la url de la imagen" fgroup-class="col-md-6" />
 
-                <x-adminlte-select name="PE_TIPO_IMAGEN" fgroup-class="col-md-6" label="Tipo de imagen">
+                <x-adminlte-select name="UPDATE_PE_TIPO_IMAGEN" fgroup-class="col-md-6" label="Tipo de imagen">
                     <x-adminlte-options :options="['BANNER', 'CONTENIDO']" placeholder="Tipo imagen" />
                 </x-adminlte-select>
 
-                <x-adminlte-input name="PF_NUM_PRECIO" type="number" step="0.01" label="Precio"
+                <x-adminlte-input name="UPDATE_PF_NUM_PRECIO" type="number" step="0.01" label="Precio"
                     placeholder="Ingresa el precio del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PD_FEC_LANZAMIENTO" type="datetime-local" label="Fecha de Lanzamiento"
+                <x-adminlte-input name="UPDATE_PD_FEC_LANZAMIENTO" type="datetime-local" label="Fecha de Lanzamiento"
                     placeholder="Ingresa la fecha de lanzamiento" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PV_TIP_VEHICULO" label="Tipo de Vehículo"
+                <x-adminlte-input name="UPDATE_PV_TIP_VEHICULO" label="Tipo de Vehículo"
                     placeholder="Ingresa el tipo de vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-select name="PE_TIP_MOTOR" label="Tipo de Motor" fgroup-class="col-md-6">
+                <x-adminlte-select name="UPDATE_PE_TIP_MOTOR" label="Tipo de Motor" fgroup-class="col-md-6">
                     <x-adminlte-options :options="['GASOLINA', 'DIESEL', 'ELECTRICO', 'HIBRIDO']" placeholder="Ingresa el tipo de motor" />
                 </x-adminlte-select>
 
-                <x-adminlte-select name="PE_TIP_TRANSMISION" label="Tipo de Transmisión" fgroup-class="col-md-6">
+                <x-adminlte-select name="UPDATE_PE_TIP_TRANSMISION" label="Tipo de Transmisión" fgroup-class="col-md-6">
                     <x-adminlte-options :options="['MANUAL', 'AUTOMATICA', 'CVT']" placeholder="Ingresa el tipo de transmisión" />
                 </x-adminlte-select>
 
-                <x-adminlte-select name="PE_TIP_TRACCION" label="Tipo de tracción" fgroup-class="col-md-6">
+                <x-adminlte-select name="UPDATE_PE_TIP_TRACCION" label="Tipo de tracción" fgroup-class="col-md-6">
                     <x-adminlte-options :options="['DELANTERA', 'TRASERA', 'AWD', '4WD']" placeholder="Ingresa el tipo de tracción" />
                 </x-adminlte-select>
 
-                <x-adminlte-input name="PF_NUM_CONSUMO_COMBUSTIBLE_KM" label="Consumo de Combustible (km/l)"
+                <x-adminlte-input name="UPDATE_PF_NUM_CONSUMO_COMBUSTIBLE_KM" label="Consumo de Combustible (km/l)"
                     type="number" step="0.01" placeholder="Ingresa el consumo de combustible"
                     fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PF_NUM_CAPACIDAD_TANQUE" type="number" label="Capacidad del Tanque (L)"
+                <x-adminlte-input name="UPDATE_PF_NUM_CAPACIDAD_TANQUE" type="number" label="Capacidad del Tanque (L)"
                     placeholder="Ingresa la capacidad del tanque" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_LONGITUD" type="number" label="Longitud (mm)"
+                <x-adminlte-input name="UPDATE_PI_NUM_LONGITUD" type="number" label="Longitud (mm)"
                     placeholder="Ingresa la longitud del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_ANCHO" type="number" label="Ancho (mm)"
+                <x-adminlte-input name="UPDATE_PI_NUM_ANCHO" type="number" label="Ancho (mm)"
                     placeholder="Ingresa el ancho del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_ALTURA" type="number" label="Altura (mm)"
+                <x-adminlte-input name="UPDATE_PI_NUM_ALTURA" type="number" label="Altura (mm)"
                     placeholder="Ingresa la altura del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_PESO" type="number" label="Peso (kg)"
+                <x-adminlte-input name="UPDATE_PI_NUM_PESO" type="number" label="Peso (kg)"
                     placeholder="Ingresa el peso del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_CAPACIDAD_CARGA_KG" type="number" label="Capacidad de Carga (kg)"
+                <x-adminlte-input name="UPDATE_PI_NUM_CAPACIDAD_CARGA_KG" type="number" label="Capacidad de Carga (kg)"
                     placeholder="Ingresa la capacidad de carga" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_ASIENTOS" type="number" label="Número de Asientos"
+                <x-adminlte-input name="UPDATE_PI_NUM_ASIENTOS" type="number" label="Número de Asientos"
                     placeholder="Ingresa el número de asientos" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_NUM_AIRBAGS" type="number" label="Número de Airbags"
+                <x-adminlte-input name="UPDATE_PI_NUM_AIRBAGS" type="number" label="Número de Airbags"
                     placeholder="Ingresa el número de airbags" fgroup-class="col-md-6" />
 
-                <x-adminlte-select name="PB_VAL_FRENOS" label="Disponibilidad de frenos" fgroup-class="col-md-6">
+                <x-adminlte-select name="UPDATE_PB_VAL_FRENOS" label="Disponibilidad de frenos" fgroup-class="col-md-6">
 
                     <x-adminlte-options :options="['SI', 'NO']" placeholder="Tiene frenos" />
                 </x-adminlte-select>
 
 
-                <x-adminlte-select name="PB_VAL_VENDIDO" label="Ha sido vendido" fgroup-class="col-md-6">
+                <x-adminlte-select name="UPDATE_PB_VAL_VENDIDO" label="Ha sido vendido" fgroup-class="col-md-6">
 
                     <x-adminlte-options :options="['SI', 'NO']" placeholder="Ha sido vendido" />
                 </x-adminlte-select>
 
-                <x-adminlte-input name="PI_COD_MARCA" type="number" label="Marca del Vehículo"
+                <x-adminlte-input name="UPDATE_PI_COD_MARCA" type="number" label="Marca del Vehículo"
                     placeholder="Ingresa la marca del vehículo" fgroup-class="col-md-6" />
 
 
-                <x-adminlte-input name="PI_COD_MODELO" type="number" label="Modelo del Vehículo"
+                <x-adminlte-input name="UPDATE_PI_COD_MODELO" type="number" label="Modelo del Vehículo"
                     placeholder="Ingresa el modelo del vehículo" fgroup-class="col-md-6" />
 
-                <x-adminlte-input name="PI_COD_SUCURSAL" type="number" label="Codigo de la Sucursal"
+                <x-adminlte-input name="UPDATE_PI_COD_SUCURSAL" type="number" label="Codigo de la Sucursal"
                     placeholder="Ingresa el nombre de la sucursal" fgroup-class="col-md-6" />
             </div>
             <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success"
                 icon="fas fa-lg fa-save" />
         </form>
 
-        <span id="idField"></span>
+
     </x-adminlte-modal>
 
 
@@ -331,41 +329,55 @@
         typeTraccion = ["DELANTERA", "TRASERA", "AWD", "4WD"]
 
 
+
+        $(document).on("click", "#editInfo", async function() {
+            const id = $(this).data("id");
+            $('#cod').val(id);
+        });
         //update vehicle data
         document.getElementById("updateForm").addEventListener("submit", function(event) {
             event.preventDefault();
+            console.log(event)
+
 
             const data = {
                 PI_COD_VEHICULO: document.getElementById("cod").value,
-                PV_NOM_VEHICULO: document.querySelector("[name='PV_NOM_VEHICULO']").value,
-                PV_DES_VEHICULO: document.querySelector("[name='PV_DES_VEHICULO']").value,
-                PI_COD_IMAGEN: document.querySelector("[name='PI_COD_IMAGEN']").value,
-                PV_URL_IMAGE: document.querySelector("[name='PV_URL_IMAGE']").value,
-                PE_TIPO_IMAGEN: typeImage[parseInt(document.querySelector("[name='PE_TIPO_IMAGEN']").value)],
-                PF_NUM_PRECIO: document.querySelector("[name='PF_NUM_PRECIO']").value,
-                PD_FEC_LANZAMIENTO: document.querySelector("[name='PD_FEC_LANZAMIENTO']").value,
-                PV_TIP_VEHICULO: document.querySelector("[name='PV_TIP_VEHICULO']").value,
-                PE_TIP_MOTOR: typeMotor[parseInt(document.querySelector("[name='PE_TIP_MOTOR']").value)],
-                PE_TIP_TRANSMISION: typeTransimision[parseInt(document.querySelector(
-                    "[name='PE_TIP_TRANSMISION']").value)],
-                PE_TIP_TRACCION: typeTraccion[parseInt(document.querySelector("[name='PE_TIP_TRACCION']")
+                PV_NOM_VEHICULO: document.querySelector("[name='UPDATE_PV_NOM_VEHICULO']").value,
+                PV_DES_VEHICULO: document.querySelector("[name='UPDATE_PV_DES_VEHICULO']").value,
+                PI_COD_IMAGEN: document.querySelector("[name='UPDATE_PI_COD_IMAGEN']").value,
+                PV_URL_IMAGE: document.querySelector("[name='UPDATE_PV_URL_IMAGE']").value,
+                PE_TIPO_IMAGEN: typeImage[parseInt(document.querySelector("[name='UPDATE_PE_TIPO_IMAGEN']")
                     .value)],
-                PF_NUM_CONSUMO_COMBUSTIBLE_KM: document.querySelector("[name='PF_NUM_CONSUMO_COMBUSTIBLE_KM']")
+                PF_NUM_PRECIO: document.querySelector("[name='UPDATE_PF_NUM_PRECIO']").value,
+                PD_FEC_LANZAMIENTO: document.querySelector("[name='UPDATE_PD_FEC_LANZAMIENTO']").value,
+                PV_TIP_VEHICULO: document.querySelector("[name='UPDATE_PV_TIP_VEHICULO']").value,
+                PE_TIP_MOTOR: typeMotor[parseInt(document.querySelector("[name='UPDATE_PE_TIP_MOTOR']").value)],
+                PE_TIP_TRANSMISION: typeTransimision[parseInt(document.querySelector(
+                    "[name='UPDATE_PE_TIP_TRANSMISION']").value)],
+                PE_TIP_TRACCION: typeTraccion[parseInt(document.querySelector("[name='UPDATE_PE_TIP_TRACCION']")
+                    .value)],
+                PF_NUM_CONSUMO_COMBUSTIBLE_KM: document.querySelector(
+                        "[name='UPDATE_PF_NUM_CONSUMO_COMBUSTIBLE_KM']")
                     .value,
-                PF_NUM_CAPACIDAD_TANQUE: document.querySelector("[name='PF_NUM_CAPACIDAD_TANQUE']").value,
-                PI_NUM_LONGITUD: document.querySelector("[name='PI_NUM_LONGITUD']").value,
-                PI_NUM_ANCHO: document.querySelector("[name='PI_NUM_ANCHO']").value,
-                PI_NUM_ALTURA: document.querySelector("[name='PI_NUM_ALTURA']").value,
-                PI_NUM_PESO: document.querySelector("[name='PI_NUM_PESO']").value,
-                PI_NUM_CAPACIDAD_CARGA_KG: document.querySelector("[name='PI_NUM_CAPACIDAD_CARGA_KG']").value,
-                PI_NUM_ASIENTOS: document.querySelector("[name='PI_NUM_ASIENTOS']").value,
-                PI_NUM_AIRBAGS: document.querySelector("[name='PI_NUM_AIRBAGS']").value,
-                PB_VAL_FRENOS: haveInfo[parseInt(document.querySelector("[name='PB_VAL_FRENOS']").value)],
-                PB_VAL_VENDIDO: haveInfo[parseInt(document.querySelector("[name='PB_VAL_VENDIDO']").value)],
-                PI_COD_MARCA: document.querySelector("[name='PI_COD_MARCA']").value,
-                PI_COD_MODELO: document.querySelector("[name='PI_COD_MODELO']").value,
-                PI_COD_SUCURSAL: document.querySelector("[name='PI_COD_SUCURSAL']").value,
+                PF_NUM_CAPACIDAD_TANQUE: document.querySelector("[name='UPDATE_PF_NUM_CAPACIDAD_TANQUE']")
+                    .value,
+                PI_NUM_LONGITUD: document.querySelector("[name='UPDATE_PI_NUM_LONGITUD']").value,
+                PI_NUM_ANCHO: document.querySelector("[name='UPDATE_PI_NUM_ANCHO']").value,
+                PI_NUM_ALTURA: document.querySelector("[name='UPDATE_PI_NUM_ALTURA']").value,
+                PI_NUM_PESO: document.querySelector("[name='UPDATE_PI_NUM_PESO']").value,
+                PI_NUM_CAPACIDAD_CARGA_KG: document.querySelector("[name='UPDATE_PI_NUM_CAPACIDAD_CARGA_KG']")
+                    .value,
+                PI_NUM_ASIENTOS: document.querySelector("[name='UPDATE_PI_NUM_ASIENTOS']").value,
+                PI_NUM_AIRBAGS: document.querySelector("[name='UPDATE_PI_NUM_AIRBAGS']").value,
+                PB_VAL_FRENOS: haveInfo[parseInt(document.querySelector("[name='UPDATE_PB_VAL_FRENOS']")
+                    .value)],
+                PB_VAL_VENDIDO: haveInfo[parseInt(document.querySelector("[name='UPDATE_PB_VAL_VENDIDO']")
+                    .value)],
+                PI_COD_MARCA: document.querySelector("[name='UPDATE_PI_COD_MARCA']").value,
+                PI_COD_MODELO: document.querySelector("[name='UPDATE_PI_COD_MODELO']").value,
+                PI_COD_SUCURSAL: document.querySelector("[name='UPDATE_PI_COD_SUCURSAL']").value,
             };
+
 
 
             fetch(`https://road-master-server.vercel.app/vehiculo/`, {
@@ -378,6 +390,7 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log("Success:", data);
+
                     location.reload();
                 })
                 .catch((error) => {
@@ -391,34 +404,41 @@
             event.preventDefault();
 
             const data = {
-                PV_NOM_VEHICULO: document.querySelector("[name='PV_NOM_VEHICULO']").value,
-                PV_DES_VEHICULO: document.querySelector("[name='PV_DES_VEHICULO']").value,
-                PV_URL_IMAGE: document.querySelector("[name='PV_URL_IMAGE']").value,
-                PE_TIPO_IMAGEN: typeImage[parseInt(document.querySelector("[name='PE_TIPO_IMAGEN']").value)],
-                PF_NUM_PRECIO: document.querySelector("[name='PF_NUM_PRECIO']").value,
-                PD_FEC_LANZAMIENTO: document.querySelector("[name='PD_FEC_LANZAMIENTO']").value,
-                PV_TIP_VEHICULO: document.querySelector("[name='PV_TIP_VEHICULO']").value,
-                PE_TIP_MOTOR: typeMotor[parseInt(document.querySelector("[name='PE_TIP_MOTOR']").value)],
-                PE_TIP_TRANSMISION: typeTransimision[parseInt(document.querySelector(
-                    "[name='PE_TIP_TRANSMISION']").value)],
-                PE_TIP_TRACCION: typeTraccion[parseInt(document.querySelector("[name='PE_TIP_TRACCION']")
+                PV_NOM_VEHICULO: document.querySelector("[name='INSERT_PV_NOM_VEHICULO']").value,
+                PV_DES_VEHICULO: document.querySelector("[name='INSERT_PV_DES_VEHICULO']").value,
+                PV_URL_IMAGE: document.querySelector("[name='INSERT_PV_URL_IMAGE']").value,
+                PE_TIPO_IMAGEN: typeImage[parseInt(document.querySelector("[name='INSERT_PE_TIPO_IMAGEN']")
                     .value)],
-                PF_NUM_CONSUMO_COMBUSTIBLE_KM: document.querySelector("[name='PF_NUM_CONSUMO_COMBUSTIBLE_KM']")
+                PF_NUM_PRECIO: document.querySelector("[name='INSERT_PF_NUM_PRECIO']").value,
+                PD_FEC_LANZAMIENTO: document.querySelector("[name='INSERT_PD_FEC_LANZAMIENTO']").value,
+                PV_TIP_VEHICULO: document.querySelector("[name='INSERT_PV_TIP_VEHICULO']").value,
+                PE_TIP_MOTOR: typeMotor[parseInt(document.querySelector("[name='INSERT_PE_TIP_MOTOR']").value)],
+                PE_TIP_TRANSMISION: typeTransimision[parseInt(document.querySelector(
+                    "[name='INSERT_PE_TIP_TRANSMISION']").value)],
+                PE_TIP_TRACCION: typeTraccion[parseInt(document.querySelector("[name='INSERT_PE_TIP_TRACCION']")
+                    .value)],
+                PF_NUM_CONSUMO_COMBUSTIBLE_KM: document.querySelector(
+                        "[name='INSERT_PF_NUM_CONSUMO_COMBUSTIBLE_KM']")
                     .value,
-                PF_NUM_CAPACIDAD_TANQUE: document.querySelector("[name='PF_NUM_CAPACIDAD_TANQUE']").value,
-                PI_NUM_LONGITUD: document.querySelector("[name='PI_NUM_LONGITUD']").value,
-                PI_NUM_ANCHO: document.querySelector("[name='PI_NUM_ANCHO']").value,
-                PI_NUM_ALTURA: document.querySelector("[name='PI_NUM_ALTURA']").value,
-                PI_NUM_PESO: document.querySelector("[name='PI_NUM_PESO']").value,
-                PI_NUM_CAPACIDAD_CARGA_KG: document.querySelector("[name='PI_NUM_CAPACIDAD_CARGA_KG']").value,
-                PI_NUM_ASIENTOS: document.querySelector("[name='PI_NUM_ASIENTOS']").value,
-                PI_NUM_AIRBAGS: document.querySelector("[name='PI_NUM_AIRBAGS']").value,
-                PB_VAL_FRENOS: haveInfo[parseInt(document.querySelector("[name='PB_VAL_FRENOS']").value)],
-                PB_VAL_VENDIDO: haveInfo[parseInt(document.querySelector("[name='PB_VAL_VENDIDO']").value)],
-                PI_COD_MARCA: document.querySelector("[name='PI_COD_MARCA']").value,
-                PI_COD_MODELO: document.querySelector("[name='PI_COD_MODELO']").value,
-                PI_COD_SUCURSAL: document.querySelector("[name='PI_COD_SUCURSAL']").value,
+                PF_NUM_CAPACIDAD_TANQUE: document.querySelector("[name='INSERT_PF_NUM_CAPACIDAD_TANQUE']")
+                    .value,
+                PI_NUM_LONGITUD: document.querySelector("[name='INSERT_PI_NUM_LONGITUD']").value,
+                PI_NUM_ANCHO: document.querySelector("[name='INSERT_PI_NUM_ANCHO']").value,
+                PI_NUM_ALTURA: document.querySelector("[name='INSERT_PI_NUM_ALTURA']").value,
+                PI_NUM_PESO: document.querySelector("[name='INSERT_PI_NUM_PESO']").value,
+                PI_NUM_CAPACIDAD_CARGA_KG: document.querySelector("[name='INSERT_PI_NUM_CAPACIDAD_CARGA_KG']")
+                    .value,
+                PI_NUM_ASIENTOS: document.querySelector("[name='INSERT_PI_NUM_ASIENTOS']").value,
+                PI_NUM_AIRBAGS: document.querySelector("[name='INSERT_PI_NUM_AIRBAGS']").value,
+                PB_VAL_FRENOS: haveInfo[parseInt(document.querySelector("[name='INSERT_PB_VAL_FRENOS']")
+                    .value)],
+                PB_VAL_VENDIDO: haveInfo[parseInt(document.querySelector("[name='INSERT_PB_VAL_VENDIDO']")
+                    .value)],
+                PI_COD_MARCA: document.querySelector("[name='INSERT_PI_COD_MARCA']").value,
+                PI_COD_MODELO: document.querySelector("[name='INSERT_PI_COD_MODELO']").value,
+                PI_COD_SUCURSAL: document.querySelector("[name='INSERT_PI_COD_SUCURSAL']").value,
             };
+
 
 
             fetch(`https://road-master-server.vercel.app/vehiculos/`, {
