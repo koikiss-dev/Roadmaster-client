@@ -9,6 +9,22 @@
         <x-adminlte-button label="Agregar un vehiculo" theme="primary" data-toggle="modal" data-target="#insert" />
     </header>
 
+    <!-- Sección de selección de vehículos -->
+    <section>
+        <h2>Seleccionar Para Comparar Vehículos</h2>
+        <x-adminlte-select2 id="selectVehiculos" name="vehiculos[]" multiple data-placeholder="Seleccione 2 o 3 vehículos"
+            style="width: 100%;">
+            @foreach ($info['config']['data'] as $row)
+                <option value="{{ $row[0] }}">{{ $row[1] }}</option> <!--  -->
+            @endforeach
+        </x-adminlte-select2>
+    </section>
+
+    <!-- Sección de visualización de vehículos seleccionados -->
+    <section id="selectedVehicles" class="d-flex flex-wrap">
+        <!--  -->
+    </section>
+
     <section>
         <x-adminlte-datatable striped id="table" :heads="$info['headsTable']" :config="$info['config']" with-buttons>
             @foreach ($info['config']['data'] as $row)
@@ -20,6 +36,8 @@
             @endforeach
         </x-adminlte-datatable>
     </section>
+
+
 
     {{-- este es el modal para ver la informacion de x registro, cambiar solo title y los campos a mostrar --}}
     <x-adminlte-modal onclick="" id="view" size="lg" title="Información de Vehiculo">
@@ -319,21 +337,7 @@
 
 
 
-    <!-- Sección de selección de vehículos -->
-    <section>
-        <h2>Seleccionar Para Comparar Vehículos</h2>
-        <x-adminlte-select2 id="selectVehiculos" name="vehiculos[]" multiple
-            data-placeholder="Seleccione 2 o 3 vehículos" style="width: 100%;">
-            @foreach ($info['config']['data'] as $row)
-                <option value="{{ $row[0] }}">{{ $row[1] }}</option> <!--  -->
-            @endforeach
-        </x-adminlte-select2>
-    </section>
 
-    <!-- Sección de visualización de vehículos seleccionados -->
-    <section id="selectedVehicles" class="d-flex flex-wrap">
-        <!--  -->
-    </section>
 @stop
 
 @push('css')
@@ -654,7 +658,7 @@
 
         });
         $(document).ready(function() {
-            // Inicializar Select2 con las opciones requeridas
+
             $('#selectVehiculos').select2({
                 width: '100%',
                 dropdownAutoWidth: true,
@@ -701,7 +705,7 @@
 
             }
 
-            // Función de debounce para mejorar la fluidez en la selección
+            // Función para mejorar la fluidez en la selección
             function debounce(func, wait) {
                 let timeout;
                 return function(...args) {
